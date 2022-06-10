@@ -20,19 +20,5 @@ const writeFile = fileContent => {
     });
 };
 
-const copyFile = fileContent => {
-    return new Promise((resolve, reject) => {
-        fs.copyFile('./src/style.css', './dist/style.css', err => {
-            if (err) {
-                reject(err);
-                return;
-            }
-            resolve({
-                ok: true,
-                message: 'Style sheet copied successfully!'
-            });
-        });
-    });
-};
 
-module.exports = { writeFile, copyFile };
+module.exports = writeFile;
